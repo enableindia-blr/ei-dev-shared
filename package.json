@@ -1,0 +1,27 @@
+{
+  "name": "@ei-dev/shared",
+  "version": "1.0.0",
+  "description": "Shared components for EnAble India Projects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "EnAble India"
+  },
+  "keywords": [
+    "ei",
+    "enable",
+    "india",
+    "shared",
+    "components"
+  ],
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
