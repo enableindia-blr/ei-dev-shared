@@ -10,4 +10,5 @@ export const UserDTOKeys = [
   "isActive",
   "isAdmin",
   "sessionId",
+  "whatsappId",
 ]

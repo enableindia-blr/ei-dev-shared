@@ -12,9 +12,10 @@ export type UserBase = {
   isBlocked?: boolean
   created_at: Date
   updated_at: Date
+  whatsappId?: string
 }
 
-export type User = UserBase &
+export type User = Omit<UserBase, "email" | "phone"> &
   (
     | {
         email?: string
@@ -51,7 +52,7 @@ export type UpdateUserDto = Partial<
   }
 >
 
-export type CreateUserDto = Omit<
+export type CreateUserDtoForWhatsApp = Omit<
   User,
   | "id"
   | "created_at"
@@ -59,9 +60,26 @@ export type CreateUserDto = Omit<
   | "emailVerified"
   | "phoneVerified"
   | "isBlocked"
+  | "email"
+  | "whatsappId"
+> & {
+  whatsappId: string
+}
+
+export type CreateUserDtoForWebApp = Omit<
+  User,
+  | "id"
+  | "created_at"
+  | "updated_at"
+  | "emailVerified"
+  | "phoneVerified"
+  | "isBlocked"
+  | "whatsappId"
 > & {
   password: string
 }
+
+export type CreateUserDto = CreateUserDtoForWebApp | CreateUserDtoForWhatsApp
 
 export type UserDTO = Omit<User, "id" | "created_at" | "updated_at"> & {
   sessionId: string
