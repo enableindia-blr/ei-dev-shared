@@ -1,3 +1,5 @@
+export type RegisteredVia = "dish" | "blimey" | "opun" | "gsc" | "spelling_tool"
+
 export type UserBase = {
   id: number
   name: string
@@ -8,11 +10,14 @@ export type UserBase = {
   adminType?: "super" | "division" | "tech"
   emailVerified: boolean
   phoneVerified: boolean
-  registeredVia: "dish" | "blimey" | "opun"
+  registeredVia: RegisteredVia
   isBlocked?: boolean
   created_at: Date
   updated_at: Date
   whatsappId?: string
+  customProps?: {
+    [key in RegisteredVia]?: Record<string, any>
+  }
 }
 
 export type User = Omit<UserBase, "email" | "phone"> &
