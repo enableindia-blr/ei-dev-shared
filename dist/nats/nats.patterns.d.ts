@@ -12,9 +12,14 @@ export declare const NATS_Patterns: {
     aichat_clearContext: string;
     aichat_logQuery: string;
     waupdate_progress: string;
+    admin_data_users: string;
+    admin_data_questions: string;
+    admin_data_bank: string;
 };
 export declare const NATS_Queues: {
     user_auth: string;
     aichat: string;
     wa_update: string;
+    admin_data: string;
 };
+//# sourceMappingURL=nats.patterns.d.ts.map

@@ -1,4 +1,7 @@
-export const NATS_Patterns = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NATS_Queues = exports.NATS_Patterns = void 0;
+exports.NATS_Patterns = {
     auth_register: "userauth.register",
     auth_login: "userauth.login",
     auth_me: "userauth.me",
@@ -16,7 +19,7 @@ export const NATS_Patterns = {
     admin_data_questions: "admindata.questions",
     admin_data_bank: "admindata.bank",
 };
-export const NATS_Queues = {
+exports.NATS_Queues = {
     user_auth: "queue.userauth",
     aichat: "queue.aichat",
     wa_update: "queue.waupdate",

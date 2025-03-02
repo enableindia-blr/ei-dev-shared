@@ -11,4 +11,20 @@ export const UserDTOKeys = [
   "isAdmin",
   "sessionId",
   "whatsappId",
+  "customProps",
+]
+
+export const UserForAdminDTOKeys = [
+  "email",
+  "phone",
+  "adminType",
+  "emailVerified",
+  "phoneVerified",
+  "registeredVia",
+  "isBlocked",
+  "name",
+  "isActive",
+  "isAdmin",
+  "whatsappId",
+  "customProps",
 ]

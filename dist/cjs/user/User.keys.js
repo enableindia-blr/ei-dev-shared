@@ -1,4 +1,7 @@
-export const UserDTOKeys = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserForAdminDTOKeys = exports.UserDTOKeys = void 0;
+exports.UserDTOKeys = [
     "email",
     "phone",
     "adminType",
@@ -13,7 +16,7 @@ export const UserDTOKeys = [
     "whatsappId",
     "customProps",
 ];
-export const UserForAdminDTOKeys = [
+exports.UserForAdminDTOKeys = [
     "email",
     "phone",
     "adminType",

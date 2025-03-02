@@ -1,4 +1,10 @@
-export type RegisteredVia = "dish" | "blimey" | "opun" | "gsc" | "spelling_tool"
+export enum RegisteredVia {
+  DISH = "dish",
+  BLIMEY = "blimey",
+  OPUN = "opun",
+  GSC = "gsc",
+  SPELLING_TOOL = "spelling_tool",
+}
 
 export type UserBase = {
   id: number
@@ -89,3 +95,8 @@ export type CreateUserDto = CreateUserDtoForWebApp | CreateUserDtoForWhatsApp
 export type UserDTO = Omit<User, "id" | "created_at" | "updated_at"> & {
   sessionId: string
 }
+
+export type UserForAdminDTO = Omit<
+  User,
+  "id" | "created_at" | "updated_at" | "customProps"
+>

@@ -12,10 +12,14 @@ export const NATS_Patterns = {
   aichat_clearContext: "aichat.clear-context",
   aichat_logQuery: "aichat.log-query",
   waupdate_progress: "waupdate.progress",
+  admin_data_users: "admindata.users",
+  admin_data_questions: "admindata.questions",
+  admin_data_bank: "admindata.bank",
 }
 
 export const NATS_Queues = {
   user_auth: "queue.userauth",
   aichat: "queue.aichat",
   wa_update: "queue.waupdate",
+  admin_data: "queue.admindata",
 }
