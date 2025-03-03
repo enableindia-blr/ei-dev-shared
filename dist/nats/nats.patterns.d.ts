@@ -15,6 +15,7 @@ export declare const NATS_Patterns: {
     admin_data_users: string;
     admin_data_questions: string;
     admin_data_bank: string;
+    admin_add_data: string;
 };
 export declare const NATS_Queues: {
     user_auth: string;

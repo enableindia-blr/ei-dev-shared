@@ -1,1 +1,1 @@
-{"version":3,"file":"nats.patterns.d.ts","sourceRoot":"","sources":["../../src/nats/nats.patterns.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,aAAa;;;;;;;;;;;;;;;;;CAiBzB,CAAA;AAED,eAAO,MAAM,WAAW;;;;;CAKvB,CAAA"}
+{"version":3,"file":"nats.patterns.d.ts","sourceRoot":"","sources":["../../src/nats/nats.patterns.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,aAAa;;;;;;;;;;;;;;;;;;CAkBzB,CAAA;AAED,eAAO,MAAM,WAAW;;;;;CAKvB,CAAA"}

@@ -18,6 +18,7 @@ exports.NATS_Patterns = {
     admin_data_users: "admindata.users",
     admin_data_questions: "admindata.questions",
     admin_data_bank: "admindata.bank",
+    admin_add_data: "admindata.add",
 };
 exports.NATS_Queues = {
     user_auth: "queue.userauth",

@@ -2,6 +2,14 @@ import { ChatQuery } from "../chat/chat.type"
 import { DishData } from "../dataSrouces/DishData.type"
 import { RegisteredVia, UserForAdminDTO } from "../user/User.type"
 
+export enum DishDataLineItemTypes {
+  WEB = "web",
+  YT_VIDEO = "yt_video",
+  YT_CHANNEL = "yt_channel",
+  XML_DB = "xml_db",
+  DE = "de",
+}
+
 export type AdminDataUsersQuery = {
   query: Partial<UserForAdminDTO>
   queryingApp: RegisteredVia
@@ -67,3 +75,15 @@ export type AdminDataBankQueryResponse =
   | AdminDataBankQuerySourcesOnlyResponse
   | AdminDataBankQueryCountOnlyResponse
   | AdminDataBankQueryDataResponse
+
+export type AdminAddDataLineItem = {
+  data_type: DishDataLineItemTypes
+  source: string
+  url: string
+  depth?: number
+  isLocalFile?: boolean
+  localFilePath?: string
+  description?: string
+  processLinks?: boolean
+  linkColumnHeader?: string
+}
