@@ -14,6 +14,7 @@ export const UserDTOKeys = [
     "customProps",
 ];
 export const UserForAdminDTOKeys = [
+    "id",
     "email",
     "phone",
     "adminType",

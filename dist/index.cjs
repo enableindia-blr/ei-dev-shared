@@ -20,4 +20,6 @@ __exportStar(require("./user/UserSession.type"), exports);
 __exportStar(require("./nats/nats.patterns"), exports);
 __exportStar(require("./chat/chat.type"), exports);
 __exportStar(require("./adminQueries/adminQueries.type"), exports);
-__exportStar(require("./dataSrouces/DishData.type"), exports);
+__exportStar(require("./dataSources/DishData.type"), exports);
+__exportStar(require("./projectAuth/ProjectAuth.type"), exports);
+__exportStar(require("./comms/Comms.type"), exports);

@@ -1,5 +1,5 @@
 import { ChatQuery } from "../chat/chat.type";
-import { DishData } from "../dataSrouces/DishData.type";
+import { DishData } from "../dataSources/DishData.type";
 import { RegisteredVia, UserForAdminDTO } from "../user/User.type";
 export declare enum DishDataLineItemTypes {
     WEB = "web",
@@ -58,10 +58,10 @@ export type AdminDataBankQueryCountOnlyResponse = {
     count: number;
 };
 export type AdminDataBankQueryDataResponse = {
-    data: DishData[] | DishData;
+    data: DishData[] | DishData | AdminAddDataLineItem | AdminAddDataLineItem[];
     total: number;
 };
-export type AdminDataBankQueryResponse = AdminDataBankQuerySourcesOnlyResponse | AdminDataBankQueryCountOnlyResponse | AdminDataBankQueryDataResponse;
+export type AdminDataBankQueryResponse = AdminDataBankQuerySourcesOnlyResponse | AdminDataBankQueryCountOnlyResponse | AdminDataBankQueryDataResponse | AdminDataBankPendingResponse;
 export type AdminAddDataLineItem = {
     data_type: DishDataLineItemTypes;
     source: string;
@@ -72,5 +72,25 @@ export type AdminAddDataLineItem = {
     description?: string;
     processLinks?: boolean;
     linkColumnHeader?: string;
+};
+export type AdminDataBankPendingResponse = {
+    data: AdminAddDataLineItem[];
+    total: number;
+};
+export type AdminDataBlockUserQuery = {
+    userId: number;
+    queryingApp: RegisteredVia;
+    block: boolean;
+};
+export type AdminDataBlockUserQueryResponse = {
+    success: boolean;
+};
+export type AdminDataMakeUserAdminQuery = {
+    userId: number;
+    queryingApp: RegisteredVia;
+    makeAdmin: boolean;
+};
+export type AdminDataMakeUserAdminQueryResponse = {
+    success: boolean;
 };
 //# sourceMappingURL=adminQueries.type.d.ts.map

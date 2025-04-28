@@ -1,5 +1,5 @@
 import { ChatQuery } from "../chat/chat.type"
-import { DishData } from "../dataSrouces/DishData.type"
+import { DishData } from "../dataSources/DishData.type"
 import { RegisteredVia, UserForAdminDTO } from "../user/User.type"
 
 export enum DishDataLineItemTypes {
@@ -67,7 +67,7 @@ export type AdminDataBankQueryCountOnlyResponse = {
 }
 
 export type AdminDataBankQueryDataResponse = {
-  data: DishData[] | DishData
+  data: DishData[] | DishData | AdminAddDataLineItem | AdminAddDataLineItem[]
   total: number
 }
 
@@ -75,6 +75,7 @@ export type AdminDataBankQueryResponse =
   | AdminDataBankQuerySourcesOnlyResponse
   | AdminDataBankQueryCountOnlyResponse
   | AdminDataBankQueryDataResponse
+  | AdminDataBankPendingResponse
 
 export type AdminAddDataLineItem = {
   data_type: DishDataLineItemTypes
@@ -86,4 +87,29 @@ export type AdminAddDataLineItem = {
   description?: string
   processLinks?: boolean
   linkColumnHeader?: string
+}
+
+export type AdminDataBankPendingResponse = {
+  data: AdminAddDataLineItem[]
+  total: number
+}
+
+export type AdminDataBlockUserQuery = {
+  userId: number
+  queryingApp: RegisteredVia
+  block: boolean
+}
+
+export type AdminDataBlockUserQueryResponse = {
+  success: boolean
+}
+
+export type AdminDataMakeUserAdminQuery = {
+  userId: number
+  queryingApp: RegisteredVia
+  makeAdmin: boolean
+}
+
+export type AdminDataMakeUserAdminQueryResponse = {
+  success: boolean
 }

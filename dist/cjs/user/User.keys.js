@@ -17,6 +17,7 @@ exports.UserDTOKeys = [
     "customProps",
 ];
 exports.UserForAdminDTOKeys = [
+    "id",
     "email",
     "phone",
     "adminType",

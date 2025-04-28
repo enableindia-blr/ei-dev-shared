@@ -4,4 +4,6 @@ export * from "./user/UserSession.type";
 export * from "./nats/nats.patterns";
 export * from "./chat/chat.type";
 export * from "./adminQueries/adminQueries.type";
-export * from "./dataSrouces/DishData.type";
+export * from "./dataSources/DishData.type";
+export * from "./projectAuth/ProjectAuth.type";
+export * from "./comms/Comms.type";

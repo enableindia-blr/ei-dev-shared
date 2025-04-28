@@ -98,5 +98,5 @@ export type UserDTO = Omit<User, "id" | "created_at" | "updated_at"> & {
 
 export type UserForAdminDTO = Omit<
   User,
-  "id" | "created_at" | "updated_at" | "customProps"
+  "created_at" | "updated_at" | "customProps"
 >

@@ -4,6 +4,8 @@ export declare const NATS_Patterns: {
     auth_me: string;
     auth_wa_login: string;
     auth_wa_me: string;
+    auth_otp_login_generate: string;
+    auth_otp_login_verify: string;
     aichat_questionText: string;
     aichat_transcribe: string;
     aichat_translate: string;
@@ -15,12 +17,21 @@ export declare const NATS_Patterns: {
     admin_data_users: string;
     admin_data_questions: string;
     admin_data_bank: string;
+    admin_data_pending: string;
     admin_add_data: string;
+    admin_block_user: string;
+    admin_upgrade_user: string;
+    project_auth_create: string;
+    project_auth_update_apiKey: string;
+    ei_comms_sendSMS: string;
+    ei_comms_sendEmail: string;
 };
 export declare const NATS_Queues: {
     user_auth: string;
     aichat: string;
     wa_update: string;
     admin_data: string;
+    project_auth: string;
+    ei_comms: string;
 };
 //# sourceMappingURL=nats.patterns.d.ts.map

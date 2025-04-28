@@ -15,6 +15,7 @@ export const UserDTOKeys = [
 ]
 
 export const UserForAdminDTOKeys = [
+  "id",
   "email",
   "phone",
   "adminType",
