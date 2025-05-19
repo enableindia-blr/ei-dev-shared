@@ -1,3 +1,4 @@
+import { RegisteredVia } from "./User.type";
 export type UserSession = {
     id: number;
     sessionId: string;
@@ -6,6 +7,8 @@ export type UserSession = {
     email?: string;
     phone?: string;
     whatsappId?: string;
+    isValid: boolean;
+    createdBy: RegisteredVia;
     created_at: Date;
     updated_at: Date;
 };

@@ -56,8 +56,8 @@ export type CreateUserDtoForWebApp = Omit<User, "id" | "created_at" | "updated_a
     password: string;
 };
 export type CreateUserDto = CreateUserDtoForWebApp | CreateUserDtoForWhatsApp;
-export type UserDTO = Omit<User, "id" | "created_at" | "updated_at"> & {
+export type UserDTO = Omit<User, "created_at"> & {
     sessionId: string;
 };
-export type UserForAdminDTO = Omit<User, "created_at" | "updated_at" | "customProps">;
+export type UserForAdminDTO = Omit<User, "created_at" | "updated_at">;
 //# sourceMappingURL=User.type.d.ts.map

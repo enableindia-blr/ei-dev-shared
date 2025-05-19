@@ -1,4 +1,5 @@
 export const UserDTOKeys = [
+  "id",
   "email",
   "phone",
   "adminType",
@@ -12,6 +13,7 @@ export const UserDTOKeys = [
   "sessionId",
   "whatsappId",
   "customProps",
+  "updated_at",
 ]
 
 export const UserForAdminDTOKeys = [

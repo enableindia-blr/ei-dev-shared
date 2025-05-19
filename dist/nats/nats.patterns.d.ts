@@ -1,11 +1,14 @@
 export declare const NATS_Patterns: {
     auth_register: string;
     auth_login: string;
+    auth_logout: string;
     auth_me: string;
     auth_wa_login: string;
     auth_wa_me: string;
     auth_otp_login_generate: string;
     auth_otp_login_verify: string;
+    auth_edit_user: string;
+    auth_latest_sessionId: string;
     aichat_questionText: string;
     aichat_transcribe: string;
     aichat_translate: string;
