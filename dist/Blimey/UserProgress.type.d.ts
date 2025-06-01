@@ -11,7 +11,8 @@ export declare enum UserProgressActionType {
     CHAPTER_COMPLETE = "CHAPTER_COMPLETE",
     EXERCISE_START = "EXERCISE_START",
     EXERCISE_COMPLETE = "EXERCISE_COMPLETE",
-    COURSE_COMPLETE = "COURSE_COMPLETE"
+    COURSE_COMPLETE = "COURSE_COMPLETE",
+    COURSE_RESET = "COURSE_RESET"
 }
 export type ConsolidatedProgressStats = {
     totalExercises: number;

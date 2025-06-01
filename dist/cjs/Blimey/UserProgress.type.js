@@ -10,4 +10,5 @@ var UserProgressActionType;
     UserProgressActionType["EXERCISE_START"] = "EXERCISE_START";
     UserProgressActionType["EXERCISE_COMPLETE"] = "EXERCISE_COMPLETE";
     UserProgressActionType["COURSE_COMPLETE"] = "COURSE_COMPLETE";
+    UserProgressActionType["COURSE_RESET"] = "COURSE_RESET";
 })(UserProgressActionType || (exports.UserProgressActionType = UserProgressActionType = {}));

@@ -20,6 +20,7 @@ export enum UserProgressActionType {
   EXERCISE_START = "EXERCISE_START",
   EXERCISE_COMPLETE = "EXERCISE_COMPLETE",
   COURSE_COMPLETE = "COURSE_COMPLETE",
+  COURSE_RESET = "COURSE_RESET",
 }
 
 export type ConsolidatedProgressStats = {
