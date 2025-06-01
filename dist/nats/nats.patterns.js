@@ -24,6 +24,7 @@ export const NATS_Patterns = {
     admin_add_data: "admindata.add",
     admin_block_user: "admindata.block-user",
     admin_upgrade_user: "admindata.upgrade-user",
+    admin_edit_user: "admindata.edit-user",
     project_auth_create: "projectauth.create",
     project_auth_update_apiKey: "projectauth.updateApiKey",
     ei_comms_sendSMS: "eicomms.sendSMS",

@@ -11,7 +11,9 @@ export enum DishDataLineItemTypes {
 }
 
 export type AdminDataUsersQuery = {
-  query: Partial<UserForAdminDTO>
+  query: Omit<Partial<UserForAdminDTO>, "customProps"> & {
+    customProps?: Record<string, any>
+  }
   queryingApp: RegisteredVia
   queryOptions: {
     skip?: number
@@ -37,6 +39,39 @@ export type AdminDataQuestionsQuery = {
       [key in keyof ChatQuery]?: "ASC" | "DESC" | 1 | -1
     }
   }
+}
+
+export type AdminDataBlockUserQuery = {
+  userId: number
+  queryingApp: RegisteredVia
+  block: boolean
+}
+
+export type AdminDataBlockUserQueryResponse = {
+  success: boolean
+}
+
+export type AdminDataMakeUserAdminQuery = {
+  userId: number
+  queryingApp: RegisteredVia
+  makeAdmin: boolean
+}
+
+export type AdminDataMakeUserAdminQueryResponse = {
+  success: boolean
+}
+
+export type AdminDataEditUserQuery = {
+  userId: number
+  queryingApp: RegisteredVia
+  userData: Omit<Partial<UserForAdminDTO>, "customProps"> & {
+    customProps?: Record<string, any>
+  }
+}
+
+export type AdminDataEditUserQueryResponse = {
+  success: boolean
+  data?: UserForAdminDTO
 }
 
 export type AdminDataQuestionsQueryResponse = {
@@ -92,24 +127,4 @@ export type AdminAddDataLineItem = {
 export type AdminDataBankPendingResponse = {
   data: AdminAddDataLineItem[]
   total: number
-}
-
-export type AdminDataBlockUserQuery = {
-  userId: number
-  queryingApp: RegisteredVia
-  block: boolean
-}
-
-export type AdminDataBlockUserQueryResponse = {
-  success: boolean
-}
-
-export type AdminDataMakeUserAdminQuery = {
-  userId: number
-  queryingApp: RegisteredVia
-  makeAdmin: boolean
-}
-
-export type AdminDataMakeUserAdminQueryResponse = {
-  success: boolean
 }

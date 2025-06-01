@@ -1,10 +1,6 @@
 import { CourseList } from "./Course.type"
 import { ExerciseType } from "./Exercise.type"
 
-type Prettify<T> = {
-  [K in keyof T]: T[K]
-} & {}
-
 export type AcceptablePrimitiveTypes = string | number | boolean | symbol | Date
 
 export type AcceptableDataTypes =

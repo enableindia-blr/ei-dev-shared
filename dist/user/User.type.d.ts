@@ -16,6 +16,7 @@ export type UserBase = {
     emailVerified: boolean;
     phoneVerified: boolean;
     registeredVia: RegisteredVia;
+    usesProjects?: RegisteredVia[];
     isBlocked?: boolean;
     created_at: Date;
     updated_at: Date;
@@ -59,5 +60,5 @@ export type CreateUserDto = CreateUserDtoForWebApp | CreateUserDtoForWhatsApp;
 export type UserDTO = Omit<User, "created_at"> & {
     sessionId: string;
 };
-export type UserForAdminDTO = Omit<User, "created_at" | "updated_at">;
+export type UserForAdminDTO = Omit<User, "created_at" | "updated_at" | "usesProjects">;
 //# sourceMappingURL=User.type.d.ts.map
