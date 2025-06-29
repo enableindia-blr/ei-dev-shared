@@ -1,0 +1,40 @@
+{
+  "name": "ei-dev-shared",
+  "version": "1.0.5",
+  "description": "Shared components for EnAble India Projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enableindia-blr/ei-dev-shared.git"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && tsc --project tsconfig.cjs.json && mv dist/cjs/index.js dist/index.cjs"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mridul Dudeja"
+  },
+  "keywords": [
+    "ei",
+    "enable",
+    "india",
+    "shared",
+    "components"
+  ],
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

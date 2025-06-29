@@ -1,0 +1,33 @@
+export const UserDTOKeys = [
+  "id",
+  "email",
+  "phone",
+  "adminType",
+  "emailVerified",
+  "phoneVerified",
+  "registeredVia",
+  "isBlocked",
+  "name",
+  "isActive",
+  "isAdmin",
+  "sessionId",
+  "whatsappId",
+  "customProps",
+  "updated_at",
+]
+
+export const UserForAdminDTOKeys = [
+  "id",
+  "email",
+  "phone",
+  "adminType",
+  "emailVerified",
+  "phoneVerified",
+  "registeredVia",
+  "isBlocked",
+  "name",
+  "isActive",
+  "isAdmin",
+  "whatsappId",
+  "customProps",
+]
