@@ -1,9 +1,10 @@
 export enum RegisteredVia {
-  DISH = "dish",
-  BLIMEY = "blimey",
-  OPUN = "opun",
-  GSC = "gsc",
-  SPELLING_TOOL = "spelling_tool",
+  DISH = 'dish',
+  BLIMEY = 'blimey',
+  OPUN = 'opun',
+  GSC = 'gsc',
+  SPELLING_TOOL = 'spelling_tool',
+  EI_ARCHIVES = 'ei_archives',
 }
 
 export type UserBase = {
@@ -13,7 +14,8 @@ export type UserBase = {
   isAdmin: boolean
   email?: string
   phone?: string
-  adminType?: "super" | "division" | "tech"
+  adminType?: 'super' | 'division' | 'tech'
+  isAdminFor?: RegisteredVia[]
   emailVerified: boolean
   phoneVerified: boolean
   registeredVia: RegisteredVia
@@ -27,7 +29,7 @@ export type UserBase = {
   }
 }
 
-export type User = Omit<UserBase, "email" | "phone"> &
+export type User = Omit<UserBase, 'email' | 'phone'> &
   (
     | {
         email?: string
@@ -59,45 +61,45 @@ export type UserForLogin = User & {
 }
 
 export type UpdateUserDto = Partial<
-  Omit<User, "id" | "created_at" | "updated_at"> & {
+  Omit<User, 'id' | 'created_at' | 'updated_at'> & {
     password?: string
   }
 >
 
 export type CreateUserDtoForWhatsApp = Omit<
   User,
-  | "id"
-  | "created_at"
-  | "updated_at"
-  | "emailVerified"
-  | "phoneVerified"
-  | "isBlocked"
-  | "email"
-  | "whatsappId"
+  | 'id'
+  | 'created_at'
+  | 'updated_at'
+  | 'emailVerified'
+  | 'phoneVerified'
+  | 'isBlocked'
+  | 'email'
+  | 'whatsappId'
 > & {
   whatsappId: string
 }
 
 export type CreateUserDtoForWebApp = Omit<
   User,
-  | "id"
-  | "created_at"
-  | "updated_at"
-  | "emailVerified"
-  | "phoneVerified"
-  | "isBlocked"
-  | "whatsappId"
+  | 'id'
+  | 'created_at'
+  | 'updated_at'
+  | 'emailVerified'
+  | 'phoneVerified'
+  | 'isBlocked'
+  | 'whatsappId'
 > & {
   password: string
 }
 
 export type CreateUserDto = CreateUserDtoForWebApp | CreateUserDtoForWhatsApp
 
-export type UserDTO = Omit<User, "created_at"> & {
+export type UserDTO = Omit<User, 'created_at'> & {
   sessionId: string
 }
 
 export type UserForAdminDTO = Omit<
   User,
-  "created_at" | "updated_at" | "usesProjects"
+  'created_at' | 'updated_at' | 'usesProjects'
 >

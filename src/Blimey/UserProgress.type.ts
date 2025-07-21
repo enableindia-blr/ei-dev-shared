@@ -1,5 +1,5 @@
-import { CourseList } from "./Course.type"
-import { ExerciseType } from "./Exercise.type"
+import { CourseList } from './Course.type'
+import { ExerciseType } from './Exercise.type'
 
 export type AcceptablePrimitiveTypes = string | number | boolean | symbol | Date
 
@@ -9,14 +9,14 @@ export type AcceptableDataTypes =
   | Array<AcceptablePrimitiveTypes | AcceptableDataTypes>
 
 export enum UserProgressActionType {
-  MODULE_START = "MODULE_START",
-  MODULE_COMPLETE = "MODULE_COMPLETE",
-  CHAPTER_START = "CHAPTER_START",
-  CHAPTER_COMPLETE = "CHAPTER_COMPLETE",
-  EXERCISE_START = "EXERCISE_START",
-  EXERCISE_COMPLETE = "EXERCISE_COMPLETE",
-  COURSE_COMPLETE = "COURSE_COMPLETE",
-  COURSE_RESET = "COURSE_RESET",
+  MODULE_START = 'MODULE_START',
+  MODULE_COMPLETE = 'MODULE_COMPLETE',
+  CHAPTER_START = 'CHAPTER_START',
+  CHAPTER_COMPLETE = 'CHAPTER_COMPLETE',
+  EXERCISE_START = 'EXERCISE_START',
+  EXERCISE_COMPLETE = 'EXERCISE_COMPLETE',
+  COURSE_COMPLETE = 'COURSE_COMPLETE',
+  COURSE_RESET = 'COURSE_RESET',
 }
 
 export type ConsolidatedProgressStats = {
@@ -65,7 +65,7 @@ export type ExerciseCompleteAction = {
 
 export type NonExerciseCompleteAction = {
   id: string
-  type: Exclude<UserProgressActionType, "EXERCISE_COMPLETE">
+  type: Exclude<UserProgressActionType, 'EXERCISE_COMPLETE'>
   courseId: CourseList
   userId: number
   data?: Record<string, AcceptableDataTypes>

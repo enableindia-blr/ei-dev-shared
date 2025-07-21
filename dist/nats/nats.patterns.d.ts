@@ -21,10 +21,14 @@ export declare const NATS_Patterns: {
     admin_data_questions: string;
     admin_data_bank: string;
     admin_data_pending: string;
+    admin_add_source: string;
+    admin_delete_source: string;
+    admin_edit_source: string;
     admin_add_data: string;
     admin_block_user: string;
     admin_upgrade_user: string;
     admin_edit_user: string;
+    admin_force_ingest_data: string;
     project_auth_create: string;
     project_auth_update_apiKey: string;
     ei_comms_sendSMS: string;

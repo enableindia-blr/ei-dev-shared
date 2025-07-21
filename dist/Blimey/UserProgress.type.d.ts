@@ -1,5 +1,5 @@
-import { CourseList } from "./Course.type";
-import { ExerciseType } from "./Exercise.type";
+import { CourseList } from './Course.type';
+import { ExerciseType } from './Exercise.type';
 export type AcceptablePrimitiveTypes = string | number | boolean | symbol | Date;
 export type AcceptableDataTypes = AcceptablePrimitiveTypes | {
     [key: string]: AcceptablePrimitiveTypes | AcceptableDataTypes;
@@ -56,7 +56,7 @@ export type ExerciseCompleteAction = {
 };
 export type NonExerciseCompleteAction = {
     id: string;
-    type: Exclude<UserProgressActionType, "EXERCISE_COMPLETE">;
+    type: Exclude<UserProgressActionType, 'EXERCISE_COMPLETE'>;
     courseId: CourseList;
     userId: number;
     data?: Record<string, AcceptableDataTypes>;

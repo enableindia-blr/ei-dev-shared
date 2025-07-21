@@ -1,8 +1,8 @@
-import { AcceptableDataTypes } from "./UserProgress.type"
+import { AcceptableDataTypes } from './UserProgress.type'
 
 export enum CourseList {
-  spellingTool = "spellingTool",
-  excel = "excel",
+  spellingTool = 'spellingTool',
+  excel = 'excel',
 }
 
 export type CourseType = {

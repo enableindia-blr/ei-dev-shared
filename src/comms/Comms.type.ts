@@ -1,7 +1,7 @@
 export enum CommsSMSVariant {
-  DEFAULT = "default",
-  OTP = "otp",
-  VERIFICATION = "verification",
+  DEFAULT = 'default',
+  OTP = 'otp',
+  VERIFICATION = 'verification',
 }
 
 export type CommsSMSRequest = {

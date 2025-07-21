@@ -1,4 +1,4 @@
-import { RegisteredVia } from "./User.type";
+import { RegisteredVia } from './User.type';
 export type UserSession = {
     id: number;
     sessionId: string;

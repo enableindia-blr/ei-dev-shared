@@ -1,4 +1,4 @@
-import { AcceptableDataTypes } from "./UserProgress.type"
+import { AcceptableDataTypes } from './UserProgress.type'
 
 export type ModuleType = {
   id: string

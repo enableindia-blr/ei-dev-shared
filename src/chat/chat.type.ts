@@ -1,6 +1,8 @@
+import { RegisteredVia } from '../user/User.type'
+
 export type ChatMessage = {
   text: string
-  type: "user" | "bot" | "articulation"
+  type: 'user' | 'bot' | 'articulation'
   isAudio?: boolean
   audioURI?: string
   audioBlob?: Blob
@@ -45,76 +47,76 @@ export type ChatArticulationResponse = {
 
 export type ChatQuery = {
   sessionId: string
-  sourceProject: "blimey" | "dish"
-  sourceMode: "wa" | "web" | "windows" | "mac" | "linux" | "ios" | "android"
+  project: RegisteredVia
+  sourceMode: 'wa' | 'web' | 'windows' | 'mac' | 'linux' | 'ios' | 'android'
   queryTimestamp: Date
   responseTimestamp?: Date
   history: ChatHistoryItem[]
 }
 
 export type ChatHistoryItem =
-  | (Omit<
-      ChatQueryPayloadText,
-      "sessionId" | "sourceProject" | "sourceMode"
-    > & { type: "query"; timestamp: Date })
-  | (Omit<
-      ChatQueryPayloadVoice,
-      "sessionId" | "sourceProject" | "sourceMode"
-    > & { type: "voice-query"; timestamp: Date })
-  | (Omit<
-      ChatQueryPayloadText,
-      "sessionId" | "sourceProject" | "sourceMode"
-    > & { type: "detect-language-query"; timestamp: Date })
-  | (Omit<ChatQueryPayloadTTS, "sessionId" | "sourceProject" | "sourceMode"> & {
-      type: "tts-query"
+  | (Omit<ChatQueryPayloadText, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'query'
+      timestamp: Date
+    })
+  | (Omit<ChatQueryPayloadVoice, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'voice-query'
+      timestamp: Date
+    })
+  | (Omit<ChatQueryPayloadText, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'detect-language-query'
+      timestamp: Date
+    })
+  | (Omit<ChatQueryPayloadTTS, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'tts-query'
       timestamp: Date
     })
   | (Omit<
       ChatQueryPayloadTranslation,
-      "sessionId" | "sourceProject" | "sourceMode"
+      'sessionId' | 'project' | 'sourceMode'
     > & {
-      type: "translation-query"
+      type: 'translation-query'
       timestamp: Date
     })
   | (Omit<
       ChatDetectedLanguageResponse,
-      "sessionId" | "sourceProject" | "sourceMode"
+      'sessionId' | 'project' | 'sourceMode'
     > & {
-      type: "detected-language"
+      type: 'detected-language'
       timestamp: Date
     })
-  | (Omit<
-      ChatTranslationResponse,
-      "sessionId" | "sourceProject" | "sourceMode"
-    > & { type: "translation"; timestamp: Date })
-  | (Omit<
-      ChatTranscriptionResponse,
-      "sessionId" | "sourceProject" | "sourceMode"
-    > & { type: "transcription"; timestamp: Date })
-  | (Omit<ChatQueryResponse, "sessionId" | "sourceProject" | "sourceMode"> & {
-      type: "query-response"
+  | (Omit<ChatTranslationResponse, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'translation'
       timestamp: Date
     })
-  | (Omit<ChatVoiceResponse, "sessionId" | "sourceProject" | "sourceMode"> & {
-      type: "voice-response"
+  | (Omit<ChatTranscriptionResponse, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'transcription'
+      timestamp: Date
+    })
+  | (Omit<ChatQueryResponse, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'query-response'
+      timestamp: Date
+    })
+  | (Omit<ChatVoiceResponse, 'sessionId' | 'project' | 'sourceMode'> & {
+      type: 'voice-response'
       timestamp: Date
     })
   | {
-      type: "error"
+      type: 'error'
       message: string
       timestamp: Date
     }
 
 export type ChatQueryPayloadText = Pick<
   ChatQuery,
-  "sessionId" | "sourceProject" | "sourceMode"
+  'sessionId' | 'project' | 'sourceMode'
 > & {
   query: string
 }
 
 export type ChatQueryPayloadVoice = Pick<
   ChatQuery,
-  "sessionId" | "sourceProject" | "sourceMode"
+  'sessionId' | 'project' | 'sourceMode'
 > & {
   audioPath?: string
   audioBuffer?: ArrayBuffer
@@ -122,7 +124,7 @@ export type ChatQueryPayloadVoice = Pick<
 
 export type ChatQueryPayloadTranslation = Pick<
   ChatQuery,
-  "sessionId" | "sourceProject" | "sourceMode"
+  'sessionId' | 'project' | 'sourceMode'
 > & {
   query: string
   source_lang_name: string
@@ -132,22 +134,22 @@ export type ChatQueryPayloadTranslation = Pick<
 
 export type ChatQueryPayloadTTS = Pick<
   ChatQuery,
-  "sessionId" | "sourceProject" | "sourceMode"
+  'sessionId' | 'project' | 'sourceMode'
 > & {
   text: string
 }
 
-export type ChatResponsePayload = Pick<ChatQuery, "sessionId"> & {
+export type ChatResponsePayload = Pick<ChatQuery, 'sessionId'> & {
   response?: ChatQueryResponse | ChatVoiceResponse | ChatArticulationResponse
 }
 
 export type ChatIncomingMessageEvent = {
-  event: "answer-text" | "answer-voice" | "articulating"
+  event: 'answer-text' | 'answer-voice' | 'articulating'
   content: ChatResponsePayload
 }
 
 export type ChatOutgoingMessageEvent = {
-  event: "question-text" | "question-voice"
+  event: 'question-text' | 'question-voice'
   content: ChatQueryPayloadText | ChatQueryPayloadVoice
 }
 
@@ -170,7 +172,7 @@ export type RAGResponse = {
 
 export type UserMessage = {
   message: {
-    role: "user"
+    role: 'user'
     content: string
   }
   promptTokens: number
@@ -178,7 +180,7 @@ export type UserMessage = {
 
 export type SystemMessage = {
   message: {
-    role: "system"
+    role: 'system'
     content: string
   }
   promptTokens: number
@@ -186,7 +188,7 @@ export type SystemMessage = {
 
 export type AssistantMessage = {
   message: {
-    role: "assistant"
+    role: 'assistant'
     content: string
   }
   promptTokens: number
