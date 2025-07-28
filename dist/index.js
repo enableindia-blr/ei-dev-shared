@@ -14,3 +14,4 @@ export * from './Blimey/Module.type';
 export * from './Blimey/UserProgress.type';
 export * from './Blimey/actionKeyMap';
 export * from './Blimey/systemActionValidators';
+export * from './helpers/mongoquery';

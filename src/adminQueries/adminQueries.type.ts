@@ -1,4 +1,5 @@
 import { ChatQuery } from '../chat/chat.type'
+import { TypeToQuery } from '../helpers/mongoquery'
 import { RAGResource } from '../ragResources/RAGResource.type'
 import { RegisteredVia, User, UserForAdminDTO } from '../user/User.type'
 
@@ -91,7 +92,7 @@ export type AdminDataQuestionsQueryResponse = {
 }
 
 export type AdminDataBankQuery = {
-  query: Partial<RAGResource>
+  query: TypeToQuery<Partial<RAGResource | AdminAddDataLineItem>>
   queryingApp: RegisteredVia
   queryOptions: {
     onlySources?: boolean
@@ -147,12 +148,14 @@ export type AdminAddDataLineItem = {
   depth?: number
   isLocalFile?: boolean
   localFilePath?: string
+  title?: string
   description?: string
   processLinks?: boolean
   linkColumnHeader?: string
   channelIdForVideo?: string
   status?: IngestionProcessingStatus
   error?: string
+  shouldScrapeUrl?: boolean
   createdAt?: Date
   updatedAt?: Date
 }

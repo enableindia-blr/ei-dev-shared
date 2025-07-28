@@ -30,3 +30,4 @@ __exportStar(require("./Blimey/Module.type"), exports);
 __exportStar(require("./Blimey/UserProgress.type"), exports);
 __exportStar(require("./Blimey/actionKeyMap"), exports);
 __exportStar(require("./Blimey/systemActionValidators"), exports);
+__exportStar(require("./helpers/mongoquery"), exports);

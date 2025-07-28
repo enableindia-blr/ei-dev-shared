@@ -1,3 +1,4 @@
+import { RAGResourceLineItemTypes } from '../adminQueries/adminQueries.type';
 import { RegisteredVia } from '../user/User.type';
 export type ChatMessage = {
     text: string;
@@ -114,14 +115,13 @@ export type ChatOutgoingMessageEvent = {
     content: ChatQueryPayloadText | ChatQueryPayloadVoice;
 };
 export type RAGContext = {
-    id: number;
-    distance: number;
-    entity: {
-        content: string;
-        org: string;
-        url: string;
-        title: string;
-    };
+    resource_id: string;
+    url: string;
+    title: string;
+    resource_type: RAGResourceLineItemTypes;
+    source: string;
+    content: string;
+    thumbnail: string;
 };
 export type RAGResponse = {
     query: string;
