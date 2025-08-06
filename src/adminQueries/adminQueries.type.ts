@@ -156,6 +156,7 @@ export type AdminAddDataLineItem = {
   status?: IngestionProcessingStatus
   error?: string
   shouldScrapeUrl?: boolean
+  originalFileName?: string
   createdAt?: Date
   updatedAt?: Date
 }
