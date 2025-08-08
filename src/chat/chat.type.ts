@@ -33,6 +33,7 @@ export type ChatQueryResponse = {
   answer?: string
   completion_tokens?: number
   error?: string
+  context?: RAGStatsResponse['context']
 }
 
 export type ChatVoiceResponse = {
@@ -145,12 +146,12 @@ export type ChatResponsePayload = Pick<ChatQuery, 'sessionId'> & {
 }
 
 export type ChatIncomingMessageEvent = {
-  event: 'answer-text' | 'answer-voice' | 'articulating'
+  event: 'answer-text' | 'answer-voice' | 'articulating' | 'answer-stats'
   content: ChatResponsePayload
 }
 
 export type ChatOutgoingMessageEvent = {
-  event: 'question-text' | 'question-voice'
+  event: 'question-text' | 'question-voice' | 'question-stats'
   content: ChatQueryPayloadText | ChatQueryPayloadVoice
 }
 
@@ -168,6 +169,16 @@ export type RAGResponse = {
   query: string
   session_id: string
   context: RAGContext[]
+}
+
+export type RAGStatsResponse = {
+  query: string
+  session_id: string
+  context: {
+    error?: string
+    mongo_query?: string
+    results?: Record<string, any>[]
+  }
 }
 
 export type UserMessage = {

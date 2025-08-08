@@ -18,5 +18,6 @@ export type RAGResource = {
     channelIdForVideo?: string;
     isConsumed?: boolean;
     project: RegisteredVia;
+    metadata?: Record<string, any>;
 };
 //# sourceMappingURL=RAGResource.type.d.ts.map
