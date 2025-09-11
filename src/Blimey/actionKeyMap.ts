@@ -31,4 +31,5 @@ export type PressKeyAction = {
   type: 'press_key'
   key: string
   instruction?: string
+  instructionPreCommand?: string
 }
