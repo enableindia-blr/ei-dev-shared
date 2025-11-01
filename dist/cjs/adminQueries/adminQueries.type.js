@@ -7,8 +7,7 @@ var RAGResourceLineItemTypes;
     RAGResourceLineItemTypes["YT_VIDEO"] = "yt_video";
     RAGResourceLineItemTypes["YT_CHANNEL"] = "yt_channel";
     RAGResourceLineItemTypes["XML_DB"] = "xml_db";
-    RAGResourceLineItemTypes["PDF"] = "pdf";
-    RAGResourceLineItemTypes["DOC"] = "doc";
+    RAGResourceLineItemTypes["PDFORDOC"] = "pdfOrDoc";
 })(RAGResourceLineItemTypes || (exports.RAGResourceLineItemTypes = RAGResourceLineItemTypes = {}));
 var IngestionProcessingStatus;
 (function (IngestionProcessingStatus) {

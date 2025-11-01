@@ -7,6 +7,8 @@ export const NATS_Patterns = {
     auth_wa_me: 'userauth.wa-me',
     auth_otp_login_generate: 'userauth.otp-login-generate',
     auth_otp_login_verify: 'userauth.otp-login-verify',
+    auth_otp_verification_generate: 'userauth.otp-verification-generate',
+    auth_otp_verification_verify: 'userauth.otp-verification-verify',
     auth_edit_user: 'userauth.edit-user',
     auth_latest_sessionId: 'userauth.latest-sessionId',
     aichat_questionText: 'aichat.question-text',

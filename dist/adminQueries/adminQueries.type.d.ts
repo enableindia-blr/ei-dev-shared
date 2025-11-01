@@ -7,8 +7,7 @@ export declare enum RAGResourceLineItemTypes {
     YT_VIDEO = "yt_video",
     YT_CHANNEL = "yt_channel",
     XML_DB = "xml_db",
-    PDF = "pdf",
-    DOC = "doc"
+    PDFORDOC = "pdfOrDoc"
 }
 export declare enum IngestionProcessingStatus {
     PENDING = "pending",

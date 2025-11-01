@@ -8,8 +8,7 @@ export enum RAGResourceLineItemTypes {
   YT_VIDEO = 'yt_video',
   YT_CHANNEL = 'yt_channel',
   XML_DB = 'xml_db',
-  PDF = 'pdf',
-  DOC = 'doc',
+  PDFORDOC = 'pdfOrDoc',
 }
 
 export enum IngestionProcessingStatus {
