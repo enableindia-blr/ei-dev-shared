@@ -1,6 +1,20 @@
 import { RAGResourceLineItemTypes } from '../adminQueries/adminQueries.type'
 import { RegisteredVia } from '../user/User.type'
 
+export type ArticulatingItem = {
+  baseText: string
+  translatedText: string
+  langCode: string
+  langName: string
+}
+
+export type ArticulatingItemQuery = {
+  sessionId: string
+  message: string
+  langCode: string
+  langName: string
+}
+
 export type ChatMessage = {
   text: string
   type: 'user' | 'bot' | 'articulation'
@@ -114,6 +128,7 @@ export type ChatQueryPayloadText = Pick<
   'sessionId' | 'project' | 'sourceMode'
 > & {
   query: string
+  page?: number
 }
 
 export type ChatQueryPayloadVoice = Pick<
@@ -122,6 +137,7 @@ export type ChatQueryPayloadVoice = Pick<
 > & {
   audioPath?: string
   audioBuffer?: ArrayBuffer
+  page?: number
 }
 
 export type ChatQueryPayloadTranslation = Pick<

@@ -1,5 +1,17 @@
 import { RAGResourceLineItemTypes } from '../adminQueries/adminQueries.type';
 import { RegisteredVia } from '../user/User.type';
+export type ArticulatingItem = {
+    baseText: string;
+    translatedText: string;
+    langCode: string;
+    langName: string;
+};
+export type ArticulatingItemQuery = {
+    sessionId: string;
+    message: string;
+    langCode: string;
+    langName: string;
+};
 export type ChatMessage = {
     text: string;
     type: 'user' | 'bot' | 'articulation';
@@ -90,10 +102,12 @@ export type ChatHistoryItem = (Omit<ChatQueryPayloadText, 'sessionId' | 'project
 };
 export type ChatQueryPayloadText = Pick<ChatQuery, 'sessionId' | 'project' | 'sourceMode'> & {
     query: string;
+    page?: number;
 };
 export type ChatQueryPayloadVoice = Pick<ChatQuery, 'sessionId' | 'project' | 'sourceMode'> & {
     audioPath?: string;
     audioBuffer?: ArrayBuffer;
+    page?: number;
 };
 export type ChatQueryPayloadTranslation = Pick<ChatQuery, 'sessionId' | 'project' | 'sourceMode'> & {
     query: string;

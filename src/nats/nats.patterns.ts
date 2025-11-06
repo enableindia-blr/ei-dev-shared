@@ -19,6 +19,7 @@ export const NATS_Patterns = {
   aichat_tts: 'aichat.tts',
   aichat_clearContext: 'aichat.clear-context',
   aichat_logQuery: 'aichat.log-query',
+  aichat_articulatingMessage: 'aichat.articulating-message',
 
   waupdate_progress: 'waupdate.progress',
 

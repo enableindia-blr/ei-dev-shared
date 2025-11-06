@@ -18,6 +18,7 @@ export declare const NATS_Patterns: {
     aichat_tts: string;
     aichat_clearContext: string;
     aichat_logQuery: string;
+    aichat_articulatingMessage: string;
     waupdate_progress: string;
     admin_data_users: string;
     admin_data_questions: string;

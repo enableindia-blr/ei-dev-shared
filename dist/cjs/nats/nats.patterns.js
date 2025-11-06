@@ -21,6 +21,7 @@ exports.NATS_Patterns = {
     aichat_tts: 'aichat.tts',
     aichat_clearContext: 'aichat.clear-context',
     aichat_logQuery: 'aichat.log-query',
+    aichat_articulatingMessage: 'aichat.articulating-message',
     waupdate_progress: 'waupdate.progress',
     admin_data_users: 'admindata.users',
     admin_data_questions: 'admindata.questions',
