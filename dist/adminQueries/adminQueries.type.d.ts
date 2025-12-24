@@ -1,5 +1,5 @@
 import { ChatQuery } from '../chat/chat.type';
-import { TypeToQuery } from '../helpers/mongoquery';
+import { MongoTypeToQuery } from '../helpers/mongoquery';
 import { RAGResource } from '../ragResources/RAGResource.type';
 import { RegisteredVia, UserForAdminDTO } from '../user/User.type';
 export declare enum RAGResourceLineItemTypes {
@@ -15,10 +15,15 @@ export declare enum IngestionProcessingStatus {
     COMPLETED = "completed",
     FAILED = "failed"
 }
+export type AdminDataFilterQuery<T> = {
+    column: keyof T;
+    operator: 'equals' | 'not_equals' | 'contains' | 'not_contains' | 'starts_with' | 'ends_with' | 'greater_than' | 'less_than' | 'greater_or_equal' | 'less_or_equal' | 'before' | 'after' | 'on' | 'is_true' | 'is_false';
+    value: any;
+};
 export type AdminDataUsersQuery = {
-    query: Omit<Partial<UserForAdminDTO>, 'customProps'> & {
+    query: (Omit<Partial<UserForAdminDTO>, 'customProps'> & {
         customProps?: Record<string, any>;
-    };
+    }) | AdminDataFilterQuery<UserForAdminDTO>[];
     queryingApp: RegisteredVia;
     queryOptions: {
         skip?: number;
@@ -62,7 +67,7 @@ export type AdminDataEditUserQueryResponse = {
     data?: UserForAdminDTO;
 };
 export type AdminDataQuestionsQuery = {
-    query: Partial<ChatQuery>;
+    query: MongoTypeToQuery<Partial<ChatQuery>>;
     queryingApp: RegisteredVia;
     queryOptions: {
         skip?: number;
@@ -78,7 +83,7 @@ export type AdminDataQuestionsQueryResponse = {
     total: number;
 };
 export type AdminDataBankQuery = {
-    query: TypeToQuery<Partial<RAGResource | AdminAddDataLineItem>>;
+    query: MongoTypeToQuery<Partial<RAGResource | AdminAddDataLineItem>>;
     queryingApp: RegisteredVia;
     queryOptions: {
         onlySources?: boolean;
