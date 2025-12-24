@@ -4,7 +4,7 @@
   "description": "Shared components for EnAble India Projects",
   "repository": {
     "type": "git",
-    "url": "https://github.com/enableindia-blr/ei-dev-shared.git"
+    "url": "git+https://github.com/enableindia-blr/ei-dev-shared.git"
   },
   "type": "module",
   "main": "dist/index.cjs",
