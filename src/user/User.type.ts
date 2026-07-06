@@ -5,7 +5,8 @@ export enum RegisteredVia {
   GSC = 'gsc',
   SPELLING_TOOL = 'spelling_tool',
   EI_ARCHIVES = 'ei_archives',
-  MEL = 'mel'
+  MEL = 'mel',
+  GarveSe_2 = 'garvese_2.0',
 }
 
 export type UserBase = {

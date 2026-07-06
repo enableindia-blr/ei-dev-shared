@@ -29,6 +29,7 @@ export declare const NATS_Patterns: {
     admin_edit_source: string;
     admin_add_data: string;
     admin_block_user: string;
+    admin_delete_user: string;
     admin_upgrade_user: string;
     admin_edit_user: string;
     admin_force_ingest_data: string;

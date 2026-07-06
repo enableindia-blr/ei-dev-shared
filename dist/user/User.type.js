@@ -6,4 +6,6 @@ export var RegisteredVia;
     RegisteredVia["GSC"] = "gsc";
     RegisteredVia["SPELLING_TOOL"] = "spelling_tool";
     RegisteredVia["EI_ARCHIVES"] = "ei_archives";
+    RegisteredVia["MEL"] = "mel";
+    RegisteredVia["GarveSe_2"] = "garvese_2.0";
 })(RegisteredVia || (RegisteredVia = {}));

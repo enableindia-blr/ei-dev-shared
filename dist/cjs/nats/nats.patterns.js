@@ -32,6 +32,7 @@ exports.NATS_Patterns = {
     admin_edit_source: 'admindata.edit-source',
     admin_add_data: 'admindata.add',
     admin_block_user: 'admindata.block-user',
+    admin_delete_user: 'admindata.delete-user',
     admin_upgrade_user: 'admindata.upgrade-user',
     admin_edit_user: 'admindata.edit-user',
     admin_force_ingest_data: 'admindata.force-ingest-data',
