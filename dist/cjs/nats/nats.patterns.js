@@ -14,6 +14,11 @@ exports.NATS_Patterns = {
     auth_otp_verification_verify: 'userauth.otp-verification-verify',
     auth_edit_user: 'userauth.edit-user',
     auth_latest_sessionId: 'userauth.latest-sessionId',
+    // Outbound user-sync EVENTS (fire-and-forget, not RPC). The common service
+    // publishes; consuming projects (blimey, gsc, opun, ...) subscribe via
+    // @EventPattern. One-way only — the common service never subscribes here.
+    user_sync_registered: 'usersync.user-registered',
+    user_sync_updated: 'usersync.user-updated',
     aichat_questionText: 'aichat.question-text',
     aichat_transcribe: 'aichat.transcribe',
     aichat_translate: 'aichat.translate',
