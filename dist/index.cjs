@@ -16,6 +16,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./user/User.type"), exports);
 __exportStar(require("./user/User.keys"), exports);
+__exportStar(require("./user/UserSyncEvent.type"), exports);
 __exportStar(require("./user/UserSession.type"), exports);
 __exportStar(require("./nats/nats.patterns"), exports);
 __exportStar(require("./chat/chat.type"), exports);
