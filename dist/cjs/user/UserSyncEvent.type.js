@@ -38,4 +38,5 @@ exports.UserSyncSnapshotKeys = [
     'customProps',
     'created_at',
     'updated_at',
+    'hashedPassword',
 ];
