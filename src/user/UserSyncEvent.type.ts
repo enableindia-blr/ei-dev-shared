@@ -20,11 +20,16 @@ export type UserSyncEventName = 'user-registered' | 'user-updated'
 
 /**
  * The user snapshot carried by every sync event: the complete common-DB user
- * row MINUS secrets. It is intentionally `UserBase`, which already excludes
- * hashedPassword and all verification/reset tokens. The authoritative dedup
- * key is `user.id`.
+ * row. It is `UserBase` PLUS the bcrypt `hashedPassword`, so a consuming project
+ * (e.g. Blimey) can let the user log in with their existing password without
+ * re-hashing. All OTHER secrets (verification/reset tokens) are still excluded —
+ * only this one credential field is shared, deliberately. Consumers must store
+ * `hashedPassword` as-is (never re-hash it) and upsert on `user.id`.
  */
-export type UserSyncSnapshot = UserBase
+export type UserSyncSnapshot = UserBase & {
+  /** bcrypt hash of the user's password — store as-is on the consumer side. */
+  hashedPassword?: string
+}
 
 export type UserSyncEvent = {
   /** Schema version of this payload (currently USER_SYNC_EVENT_VERSION). */
@@ -37,7 +42,7 @@ export type UserSyncEvent = {
   occurredAt: string
   /** The project that triggered the change (e.g. the user's registeredVia, or the editing project). */
   sourceProject: RegisteredVia
-  /** Complete, secret-free user snapshot. Consumers upsert on `user.id`. */
+  /** Complete user snapshot (incl. bcrypt hashedPassword). Consumers upsert on `user.id`. */
   user: UserSyncSnapshot
 }
 
@@ -64,4 +69,5 @@ export const UserSyncSnapshotKeys: (keyof UserSyncSnapshot)[] = [
   'customProps',
   'created_at',
   'updated_at',
+  'hashedPassword',
 ]
