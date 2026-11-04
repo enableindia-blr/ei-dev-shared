@@ -7,18 +7,20 @@
     "url": "git+https://github.com/enableindia-blr/ei-dev-shared.git"
   },
   "type": "module",
-  "main": "dist/index.cjs",
+  "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
+    "types": "./dist/index.d.ts",
     "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
+    "require": "./dist/cjs/index.js"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc && tsc --project tsconfig.cjs.json && mv dist/cjs/index.js dist/index.cjs"
+    "build": "rm -rf dist && tsc && tsc --project tsconfig.cjs.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
+    "test": "node --no-experimental-require-module -e \"require('./dist/cjs/index.js')\" && echo 'CJS require OK'"
   },
   "license": "MIT",
   "author": {
