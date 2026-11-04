@@ -11,6 +11,7 @@ export const NATS_Patterns = {
   auth_otp_verification_verify: 'userauth.otp-verification-verify',
   auth_edit_user: 'userauth.edit-user',
   auth_latest_sessionId: 'userauth.latest-sessionId',
+  auth_reset_password: 'userauth.reset-password',
 
   // Outbound user-sync EVENTS (fire-and-forget, not RPC). The common service
   // publishes; consuming projects (blimey, gsc, opun, ...) subscribe via
