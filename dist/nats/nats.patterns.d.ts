@@ -11,6 +11,7 @@ export declare const NATS_Patterns: {
     auth_otp_verification_verify: string;
     auth_edit_user: string;
     auth_latest_sessionId: string;
+    auth_reset_password: string;
     user_sync_registered: string;
     user_sync_updated: string;
     aichat_questionText: string;
