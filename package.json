@@ -11,16 +11,24 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.js",
-    "require": "./dist/cjs/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./blimey": {
+      "types": "./dist/blimey.d.ts",
+      "import": "./dist/blimey.js",
+      "require": "./dist/cjs/blimey.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "rm -rf dist && tsc && tsc --project tsconfig.cjs.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
-    "test": "node --no-experimental-require-module -e \"require('./dist/cjs/index.js')\" && echo 'CJS require OK'"
+    "test": "node --no-experimental-require-module -e \"require('./dist/cjs/index.js'); require('./dist/cjs/blimey.js')\" && echo 'CJS require OK'"
   },
   "license": "UNLICENSED",
   "author": {
@@ -38,5 +46,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "typesVersions": {
+    "*": {
+      "blimey": [
+        "dist/blimey.d.ts"
+      ]
+    }
   }
 }
