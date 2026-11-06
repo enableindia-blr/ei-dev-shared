@@ -42,3 +42,7 @@ npm test        # checks the CommonJS entry loads
 `RegisteredVia` is the list of project names (also a Postgres enum in user-service).
 Adding one means editing `src/user/User.type.ts`, publishing a new version, and
 extending the DB enum.
+
+## License
+
+`UNLICENSED`: for use by Enable India applications only. No public license is granted.
