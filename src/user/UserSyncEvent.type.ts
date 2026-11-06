@@ -4,7 +4,7 @@ import { RegisteredVia, UserBase } from './User.type'
  * Outbound user-sync events.
  *
  * The EI Common Service (ei-user-service) PUBLISHES these; consuming projects
- * (blimey today, gsc/opun later) SUBSCRIBE and mirror the user into their own
+ * SUBSCRIBE and mirror the user into their own
  * database. This is strictly one-way: the common service never subscribes to
  * these subjects, and consumers must not re-publish them.
  *
@@ -21,7 +21,7 @@ export type UserSyncEventName = 'user-registered' | 'user-updated'
 /**
  * The user snapshot carried by every sync event: the complete common-DB user
  * row. It is `UserBase` PLUS the bcrypt `hashedPassword`, so a consuming project
- * (e.g. Blimey) can let the user log in with their existing password without
+ * can let the user log in with their existing password without
  * re-hashing. All OTHER secrets (verification/reset tokens) are still excluded —
  * only this one credential field is shared, deliberately. Consumers must store
  * `hashedPassword` as-is (never re-hash it) and upsert on `user.id`.

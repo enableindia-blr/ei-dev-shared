@@ -5,7 +5,7 @@ exports.UserSyncSnapshotKeys = exports.USER_SYNC_EVENT_VERSION = void 0;
  * Outbound user-sync events.
  *
  * The EI Common Service (ei-user-service) PUBLISHES these; consuming projects
- * (blimey today, gsc/opun later) SUBSCRIBE and mirror the user into their own
+ * SUBSCRIBE and mirror the user into their own
  * database. This is strictly one-way: the common service never subscribes to
  * these subjects, and consumers must not re-publish them.
  *

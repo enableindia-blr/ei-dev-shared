@@ -2,7 +2,7 @@
 
 Shared TypeScript types and constants for the EI-Comm services (`ei-user-service`,
 `ei-comms-service`) and the products that call them over NATS: NATS subject names
-(`NATS_Patterns`), request/response DTOs, the `RegisteredVia` project enum, and
+(`NATS_Patterns`), request/response DTOs, the `RegisteredVia` project-name type, and
 user-sync event types.
 
 It contains types and constants only: no services, no runtime dependencies.
@@ -16,7 +16,7 @@ npm install @enable-india/ei-dev-shared
 Works from both CommonJS (`require`, e.g. NestJS) and bundlers (`import`).
 
 ```ts
-import { NATS_Patterns, RegisteredVia, CommsSMSVariant } from '@enable-india/ei-dev-shared'
+import { NATS_Patterns, CommsSMSVariant, type RegisteredVia } from '@enable-india/ei-dev-shared'
 ```
 
 > Plain Node ESM (`import` without a bundler) does not work yet: the ESM build's
@@ -39,9 +39,14 @@ npm test        # checks the CommonJS entry loads
 
 ## Adding a project
 
-`RegisteredVia` is the list of project names (also a Postgres enum in user-service).
-Adding one means editing `src/user/User.type.ts`, publishing a new version, and
-extending the DB enum.
+Projects are data, not code: register one with `./scripts/deploy.sh prod --add-project <name>`
+(ei-comm repo), which calls `projectauth.create`. No new version of this package is needed.
+`RegisteredVia` is just `string`; names use 1-50 of `a-z 0-9 _ .`.
+
+## Upgrading from `@ei-dev/ei-dev-shared` 1.x
+
+2.0.0 removed the `RegisteredVia` enum (it published every project name). Replace
+`RegisteredVia.MY_APP` with `'my_app'` (the project's name); code that only uses the type is unchanged.
 
 ## License
 

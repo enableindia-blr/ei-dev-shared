@@ -1,13 +1,10 @@
-export declare enum RegisteredVia {
-    DISH = "dish",
-    BLIMEY = "blimey",
-    OPUN = "opun",
-    GSC = "gsc",
-    SPELLING_TOOL = "spelling_tool",
-    EI_ARCHIVES = "ei_archives",
-    MEL = "mel",
-    GarveSe_2 = "garvese_2.0"
-}
+/**
+ * A project's name, e.g. 'my_app'. Projects are data: the source of truth is the
+ * `projects` table in ei-user-service (register one with projectauth.create), so
+ * the package lists no names and a new project needs no new version (#22 / F14).
+ * Allowed shape: 1-50 of a-z, 0-9, _ and .
+ */
+export type RegisteredVia = string;
 export type UserBase = {
     id: number;
     name: string;
@@ -26,7 +23,7 @@ export type UserBase = {
     updated_at: Date;
     whatsappId?: string;
     customProps?: {
-        [key in RegisteredVia]?: Record<string, any>;
+        [project: RegisteredVia]: Record<string, any> | undefined;
     };
 };
 export type User = Omit<UserBase, 'email' | 'phone'> & ({

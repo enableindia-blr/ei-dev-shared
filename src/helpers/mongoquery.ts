@@ -1,8 +1,8 @@
 export type MongoUnpacked<T> = T extends (infer U)[]
   ? U
   : T extends ReadonlyArray<infer U>
-  ? U
-  : T
+    ? U
+    : T
 
 export type MongoAnyArray<T> = T[] | ReadonlyArray<T>
 
