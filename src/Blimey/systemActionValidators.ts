@@ -27,8 +27,7 @@ export type ExcelValueInCellValidator = {
 }
 
 export type SystemActionValidatorFunctions =
-  | ExistsValidator
-  | ExcelValueInCellValidator
+  ExistsValidator | ExcelValueInCellValidator
 
 export type SystemActionValidator = {
   [K in SystemActionValidatorFunctions['type']]: {

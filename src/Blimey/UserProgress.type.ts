@@ -77,8 +77,7 @@ export type NonExerciseCompleteAction = {
 }
 
 export type UserProgressAction =
-  | ExerciseCompleteAction
-  | NonExerciseCompleteAction
+  ExerciseCompleteAction | NonExerciseCompleteAction
 
 export type UserProgressActionServerEntity = {
   dbId: number

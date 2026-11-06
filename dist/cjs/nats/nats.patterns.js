@@ -16,7 +16,7 @@ exports.NATS_Patterns = {
     auth_latest_sessionId: 'userauth.latest-sessionId',
     auth_reset_password: 'userauth.reset-password',
     // Outbound user-sync EVENTS (fire-and-forget, not RPC). The common service
-    // publishes; consuming projects (blimey, gsc, opun, ...) subscribe via
+    // publishes; consuming projects subscribe via
     // @EventPattern. One-way only — the common service never subscribes here.
     user_sync_registered: 'usersync.user-registered',
     user_sync_updated: 'usersync.user-updated',

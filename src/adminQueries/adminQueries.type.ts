@@ -143,10 +143,7 @@ export type AdminDataBankQueryCountOnlyResponse = {
 
 export type AdminDataBankQueryDataResponse = {
   data:
-    | RAGResource[]
-    | RAGResource
-    | AdminAddDataLineItem
-    | AdminAddDataLineItem[]
+    RAGResource[] | RAGResource | AdminAddDataLineItem | AdminAddDataLineItem[]
   total: number
 }
 
