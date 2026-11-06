@@ -17,10 +17,13 @@ Works from both CommonJS (`require`, e.g. NestJS) and bundlers (`import`).
 
 ```ts
 import { NATS_Patterns, CommsSMSVariant, type RegisteredVia } from '@enable-india/ei-dev-shared'
+// Blimey's course / exercise / progress types live in their own entry:
+import { CourseList, UserProgressActionType } from '@enable-india/ei-dev-shared/blimey'
 ```
 
 > Plain Node ESM (`import` without a bundler) does not work yet: the ESM build's
-> relative imports have no `.js` extension.
+> relative imports have no `.js` extension. For the same reason TypeScript's
+> `moduleResolution: node16`/`nodenext` can't read the types; `node10` (`node`) and `bundler` work.
 
 ## Develop
 
@@ -47,6 +50,10 @@ Projects are data, not code: register one with `./scripts/deploy.sh prod --add-p
 
 2.0.0 removed the `RegisteredVia` enum (it published every project name). Replace
 `RegisteredVia.MY_APP` with `'my_app'` (the project's name); code that only uses the type is unchanged.
+
+2.0.0 also moved the `Blimey/` types (`Course`, `Chapter`, `Module`, `Exercise`,
+`UserProgress`, `actionKeyMap`, `systemActionValidators` and their enums) out of the main entry:
+import them from `'@enable-india/ei-dev-shared/blimey'`. Everything else stays in the main entry.
 
 ## License
 
