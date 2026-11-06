@@ -27,4 +27,3 @@ export type ChapterVideo = {
     thumbnail?: string;
     title?: string;
 };
-//# sourceMappingURL=Chapter.type.d.ts.map

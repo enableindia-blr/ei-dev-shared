@@ -19,4 +19,3 @@ export type CourseType = {
         [key in CourseList]?: Record<string, AcceptableDataTypes>;
     };
 };
-//# sourceMappingURL=Course.type.d.ts.map

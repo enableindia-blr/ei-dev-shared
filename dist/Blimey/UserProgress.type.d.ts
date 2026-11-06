@@ -83,4 +83,3 @@ export type UserProgressActionServerEntity = {
     created_at: Date;
     updated_at: Date;
 };
-//# sourceMappingURL=UserProgress.type.d.ts.map

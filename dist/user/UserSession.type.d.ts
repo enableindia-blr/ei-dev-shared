@@ -20,4 +20,3 @@ export type CreateUserSessionDTO = {
     phone?: string;
     whatsappId?: string;
 };
-//# sourceMappingURL=UserSession.type.d.ts.map

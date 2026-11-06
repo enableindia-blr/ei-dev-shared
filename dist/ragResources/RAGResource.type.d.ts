@@ -20,4 +20,3 @@ export type RAGResource = {
     project: RegisteredVia;
     metadata?: Record<string, any>;
 };
-//# sourceMappingURL=RAGResource.type.d.ts.map

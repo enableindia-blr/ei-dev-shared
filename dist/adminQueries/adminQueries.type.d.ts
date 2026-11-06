@@ -156,4 +156,3 @@ export type AdminEditDataSourceQuery = {
 export type AdminEditDataSourceQueryResponse = {
     success: boolean;
 };
-//# sourceMappingURL=adminQueries.type.d.ts.map

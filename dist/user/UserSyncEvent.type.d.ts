@@ -46,4 +46,3 @@ export type UserSyncEvent = {
  * the payload is a deliberate edit here. Mirrors the UserBase shape.
  */
 export declare const UserSyncSnapshotKeys: (keyof UserSyncSnapshot)[];
-//# sourceMappingURL=UserSyncEvent.type.d.ts.map

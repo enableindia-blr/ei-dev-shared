@@ -173,4 +173,3 @@ export type AssistantMessage = {
     };
     promptTokens: number;
 };
-//# sourceMappingURL=chat.type.d.ts.map

@@ -65,4 +65,3 @@ export type UserDTO = Omit<User, 'created_at'> & {
     sessionId: string;
 };
 export type UserForAdminDTO = Omit<User, 'created_at' | 'updated_at' | 'usesProjects'>;
-//# sourceMappingURL=User.type.d.ts.map

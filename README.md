@@ -1,54 +1,44 @@
-# EI Dev Shared
+# @enable-india/ei-dev-shared
 
-This repository contains shared backend services for the ENABLEINDIA project.
+Shared TypeScript types and constants for the EI-Comm services (`ei-user-service`,
+`ei-comms-service`) and the products that call them over NATS: NATS subject names
+(`NATS_Patterns`), request/response DTOs, the `RegisteredVia` project enum, and
+user-sync event types.
 
-## Table of Contents
+It contains types and constants only: no services, no runtime dependencies.
 
-- [EI Dev Shared](#ei-dev-shared)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
+## Install
 
-## Introduction
+```bash
+npm install @enable-india/ei-dev-shared
+```
 
-The `ei-dev-shared` repository includes common backend services and utilities used across various ENABLEINDIA projects. It aims to provide reusable components to streamline development and ensure consistency.
+Works from both CommonJS (`require`, e.g. NestJS) and bundlers (`import`).
 
-## Installation
+```ts
+import { NATS_Patterns, RegisteredVia, CommsSMSVariant } from '@enable-india/ei-dev-shared'
+```
 
-To install the dependencies, run the following command:
+> Plain Node ESM (`import` without a bundler) does not work yet: the ESM build's
+> relative imports have no `.js` extension.
+
+## Develop
 
 ```bash
 npm install
+npm run build   # ESM + types to dist/, CommonJS to dist/cjs/
+npm test        # checks the CommonJS entry loads
 ```
 
-## Usage
+`dist/` is committed: run `npm run build` and commit `dist/` with every source change.
 
-To start the development server, use:
+## Publish
 
-```bash
-npm start
-```
+`npm publish` does not build. Run `npm run build` first, bump `version`, then publish
+(needs the `ei.npm` account's 2FA code). A published version can never be overwritten.
 
-For running tests:
+## Adding a project
 
-```bash
-npm test
-```
-
-## Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+`RegisteredVia` is the list of project names (also a Postgres enum in user-service).
+Adding one means editing `src/user/User.type.ts`, publishing a new version, and
+extending the DB enum.

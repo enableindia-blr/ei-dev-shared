@@ -49,4 +49,3 @@ export declare const NATS_Queues: {
     project_auth: string;
     ei_comms: string;
 };
-//# sourceMappingURL=nats.patterns.d.ts.map
