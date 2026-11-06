@@ -22,7 +22,7 @@
     "build": "rm -rf dist && tsc && tsc --project tsconfig.cjs.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
     "test": "node --no-experimental-require-module -e \"require('./dist/cjs/index.js')\" && echo 'CJS require OK'"
   },
-  "license": "MIT",
+  "license": "UNLICENSED",
   "author": {
     "name": "Mridul Dudeja"
   },
