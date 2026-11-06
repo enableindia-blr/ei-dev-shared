@@ -24,4 +24,3 @@ export type SystemActionValidator = {
         }>['validate']>[0];
     };
 }[SystemActionValidatorFunctions['type']];
-//# sourceMappingURL=systemActionValidators.d.ts.map

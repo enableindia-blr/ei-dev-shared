@@ -59,4 +59,3 @@ export type MongoQuerySelector<T> = MongoRootQuerySelector<T> & {
 export type MongoTypeToQuery<T> = MongoQuerySelector<T> | {
     [P in keyof T]?: T[P] extends object ? T[P] extends MongoAnyArray<any> ? MongoTypeToQuery<MongoUnpacked<T[P]>> : MongoTypeToQuery<T[P]> : T[P] | MongoQuerySelector<T[P]>;
 };
-//# sourceMappingURL=mongoquery.d.ts.map

@@ -19,4 +19,3 @@ export type CreateUpdateProjectResponse = {
     projectId: string;
     apiKey: string;
 };
-//# sourceMappingURL=ProjectAuth.type.d.ts.map

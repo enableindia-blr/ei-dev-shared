@@ -29,4 +29,3 @@ export type CommsEmailResponse = {
     message: string;
     error?: string;
 };
-//# sourceMappingURL=Comms.type.d.ts.map

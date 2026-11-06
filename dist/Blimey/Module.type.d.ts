@@ -16,4 +16,3 @@ export type ModuleType = {
         [key: string]: AcceptableDataTypes;
     };
 };
-//# sourceMappingURL=Module.type.d.ts.map

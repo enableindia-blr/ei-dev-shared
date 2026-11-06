@@ -29,4 +29,3 @@ export type PressKeyAction = {
     instruction?: string;
     instructionPreCommand?: string;
 };
-//# sourceMappingURL=actionKeyMap.d.ts.map
