@@ -1,3 +1,4 @@
+// E2: typed so a renamed/misspelled field fails the build instead of vanishing from responses.
 export const UserDTOKeys = [
     'id',
     'email',

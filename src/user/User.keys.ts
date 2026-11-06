@@ -1,4 +1,7 @@
-export const UserDTOKeys = [
+import type { UserDTO, UserForAdminDTO } from './User.type'
+
+// E2: typed so a renamed/misspelled field fails the build instead of vanishing from responses.
+export const UserDTOKeys: (keyof UserDTO)[] = [
   'id',
   'email',
   'phone',
@@ -17,7 +20,7 @@ export const UserDTOKeys = [
   'isAdminFor',
 ]
 
-export const UserForAdminDTOKeys = [
+export const UserForAdminDTOKeys: (keyof UserForAdminDTO)[] = [
   'id',
   'email',
   'phone',
