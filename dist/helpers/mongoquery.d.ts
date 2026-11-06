@@ -15,11 +15,10 @@ export type MongoRootQuerySelector<T> = {
         $caseSensitive?: boolean;
         $diacriticSensitive?: boolean;
     };
-    /** @see https://www.mongodb.com/docs/manual/reference/operator/query/where/#op._S_where */
-    $where?: string | Function;
     /** @see https://www.mongodb.com/docs/manual/reference/operator/query/comment/#op._S_comment */
     $comment?: string;
-    $expr?: Record<string, any>;
+    $where?: never;
+    $expr?: never;
 };
 export type MongoFilterQuery<T> = {
     [P in keyof T]?: MongoCondition<T[P]>;
@@ -42,7 +41,6 @@ export type MongoQuerySelector<T> = MongoRootQuerySelector<T> & {
      */
     $exists?: boolean;
     $type?: string | number;
-    $expr?: any;
     $jsonSchema?: any;
     $mod?: T extends number ? [number, number] : never;
     $regex?: T extends string ? RegExp | string : never;
